@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+# generated outputs from examples
+examples/*.resolved.csv
+examples/*.jlcpcb.csv
+examples/*.report.md
+examples/*_datasheets/
+examples/*_fab_package.zip
+.DS_Store
+*.egg
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jlcfind"
+version = "0.1.0"
+description = "Search JLCPCB/LCSC parts, resolve BOMs, estimate assembly cost, and build fab packages — zero-dependency."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Tommaso Maggiolo" }]
+license = { text = "MIT" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+keywords = ["jlcpcb", "lcsc", "bom", "pcb", "kicad", "electronics", "cpl"]
+dependencies = []  # core is stdlib-only on purpose
+
+[project.optional-dependencies]
+pretty = ["rich>=13"]   # optional nicer tables; tool works fine without it
+dev = ["pytest>=7"]
+
+[project.scripts]
+jlcfind = "jlcfind.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+jlcfind = ["py.typed"]
+
+[project.urls]
+Homepage = "https://github.com/Tommycode3/jlcfind"
+Repository = "https://github.com/Tommycode3/jlcfind"
+Issues = "https://github.com/Tommycode3/jlcfind/issues"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
